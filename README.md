@@ -50,8 +50,8 @@ flowchart LR
 
 | File | Purpose |
 | --- | --- |
-| [`Food100-NEW.ipynb`](Food100-NEW.ipynb) | VGG16 setup, bottleneck-feature extraction, classifier training, and fine-tuning |
-| [`model_testing_evaluating.ipynb`](model_testing_evaluating.ipynb) | Model loading, inference, validation evaluation, and top-k analysis |
+| [`01_training_and_finetuning.ipynb`](01_training_and_finetuning.ipynb) | VGG16 setup, bottleneck-feature extraction, classifier training, and fine-tuning |
+| [`02_evaluation.ipynb`](02_evaluation.ipynb) | Model loading, inference, validation evaluation, and top-k analysis |
 | `class_indices_map.p` | Serialized mapping between prediction indices and dataset classes |
 | `food_info.p` | Serialized food metadata used by the original project |
 
@@ -79,6 +79,16 @@ Keeping the original implementation intact preserves the experimental context an
 ## Model details
 
 The classifier head used in the original experiment includes a 256-unit dense layer, dropout, and a 100-unit output layer. During fine-tuning, the first 25 layers of the assembled model were frozen and the remaining layers were optimized with categorical cross-entropy and SGD.
+
+## Dataset reference
+
+The project uses **UEC-FOOD100**, introduced by the Food Recognition Research Group at the University of Electro-Communications, Tokyo.
+
+A relevant reference for the dataset and food-recognition benchmark is:
+
+> Yoshiyuki Kawano and Keiji Yanai. *Food Image Recognition with Deep Convolutional Features*. UbiComp 2014 Adjunct, 2014. DOI: [10.1145/2638728.2641339](https://doi.org/10.1145/2638728.2641339).
+
+The UEC food-dataset project pages are maintained by the Yanai Laboratory / Food Recognition Research Group: [UEC food datasets](https://foodcam.mobi/dataset256.html).
 
 ## Project status
 
